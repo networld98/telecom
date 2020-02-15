@@ -1,0 +1,437 @@
+
+
+/*************************************************************************
+
+
+                        G   E   N   E   R   A   L
+
+
+*************************************************************************/
+
+
+/*************************************************************************
+
+                             C O M M O N S
+
+*************************************************************************/
+
+
+.page-content.projects-page{
+	padding-bottom: 100px;
+}
+
+@media (max-width: 1280px){
+
+.page-content.projects-page{
+	padding-bottom: 80px;
+}
+
+}
+
+@media (max-width: 1024px){
+
+.page-content.projects-page{
+	padding-bottom: 60px;
+}
+
+}
+
+@media (max-width: 960px){
+
+.page-content.projects-page{
+	padding-bottom: 48px;
+}
+
+}
+
+@media (max-width: 640px){
+
+.page-content.projects-page{
+	padding-bottom: 36px;
+}
+
+}
+
+
+
+/*************************************************************************
+
+                             C O M M O N S
+
+*************************************************************************/
+
+.projects-page .gallery-section{
+	margin-top: 56px;
+	overflow: hidden;
+}
+
+@media (max-width: 1440px){
+
+.projects-page .gallery-section{
+	margin-top: 64px;
+}
+
+}
+
+@media (max-width: 1024px){
+
+.projects-page .gallery-section{
+	margin-top: 36px;
+}
+
+}
+
+@media (max-width: 960px){
+
+.projects-page .gallery-section{
+	margin-top: 16px;
+}
+
+}
+
+.projects-page .gallery-section>*{
+	align-items: stretch;
+	overflow: visible;
+}
+
+.projects-page .gallery-section .header{
+	font-family: CeraProBold;
+	font-size: 48px;
+	line-height: 56px;
+}
+
+@media (max-width: 1024px){
+
+.projects-page .gallery-section .header{
+	font-size: 32px;
+	line-height: 40px;
+}
+
+}
+
+.projects-page .gallery-section .nav{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin-top: 40px;
+}
+
+.projects-page .gallery-section .nav.hidden{
+	display: none;
+}
+
+@media (max-width: 1024px){
+
+.projects-page .gallery-section .nav{
+	margin-top: 24px;
+}
+
+}
+
+@media (max-width: 960px){
+
+.projects-page .gallery-section .nav{
+	margin-top: 16px;
+}
+
+}
+
+	.projects-page .gallery-section .nav>*{
+		position: relative;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+		background: url(/assets/img/next.svg) no-repeat center center/contain ,#7A80DF;
+		cursor: pointer;
+		-webkit-transition: background-color 200ms ease;
+		-moz-transition: background-color 200ms ease;
+		-ms-transition: background-color 200ms ease;
+		transition: background-color 200ms ease;
+		will-change: background-color;
+	}
+
+	.projects-page .gallery-section .nav>*.disabled{
+		opacity: .5;
+		pointer-events: none;
+	}
+
+	.projects-page .gallery-section .nav>*+*{
+		margin-left: 8px;
+	}
+
+	.projects-page .gallery-section .nav>*.prev{
+		-webkit-transform: rotate(180deg);
+		-moz-transform: rotate(180deg);
+		-ms-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+
+	.is-not-touch .projects-page .gallery-section .nav>*:hover{
+		background-color: #FFC700;
+	}
+	
+	.is-not-touch .projects-page .gallery-section .nav>*:active,
+	.is-touch .projects-page .gallery-section .nav>*:active{
+		background-color: #F3BE00;
+	}
+
+.projects-page .gallery-section .list{
+	margin-top: 16px;
+}
+
+@media (max-width: 1024px){
+
+.projects-page .gallery-section .list{
+	margin-top: 8px;
+}
+
+}
+
+.projects-page .gallery-section .list,
+.projects-page .gallery-section .list *{
+	overflow: visible;
+}
+
+	.projects-page .gallery-section .list .slides{
+		max-width: 1156px;
+		margin-left: 0;
+	}
+
+@media (max-width: 1440px){
+
+	.projects-page .gallery-section .list .slides{
+		max-width: 962px;
+	}
+
+}
+
+@media (max-width: 1280px){
+
+	.projects-page .gallery-section .list .slides{
+		max-width: 946px;
+	}
+
+}
+
+@media (max-width: 1024px){
+
+	.projects-page .gallery-section .list .slides{
+		max-width: 705px;
+	}
+
+}
+
+@media (max-width: 960px){
+
+	.projects-page .gallery-section .list .slides{
+		max-width: 620px;
+	}
+
+}
+
+@media (max-width: 640px){
+
+	.projects-page .gallery-section .list .slides{
+		max-width: initial;
+		overflow: hidden;
+	}
+
+}
+
+		.projects-page .gallery-section .list .slides .swiper-slide{
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*{}
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*+*{
+				margin-left: 120px;
+			}
+
+		@media (max-width: 1280px){
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*+*{
+				margin-left: 100px;
+			}
+
+		}
+
+		@media (max-width: 1024px){
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*+*{
+				margin-left: 80px;
+			}
+
+		}
+
+		@media (max-width: 960px){
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*+*{
+				margin-left: 64px;
+			}
+
+		}
+
+		@media (max-width: 640px){
+
+			.projects-page .gallery-section .list .slides .swiper-slide>*+*{
+				margin-left: 0;
+			}
+
+		}
+
+			.projects-page .gallery-section .list .slides .item{
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				justify-content: flex-start;
+				flex-grow: 1;
+				flex-basis: 0;
+			}
+
+				.projects-page .gallery-section .list .slides .item .image{
+					align-items: stretch;
+				}
+
+					.projects-page .gallery-section .list .slides .item .image img{
+						display: block;
+						width: 100%;
+					}
+
+				.projects-page .gallery-section .list .slides .item .title{
+					font-size: 24px;
+					line-height: 32px;
+					margin-top: 32px;
+					font-family: CeraProBold;
+					-webkit-transition: color 200ms ease;
+					-moz-transition: color 200ms ease;
+					-ms-transition: color 200ms ease;
+					transition: color 200ms ease;
+					will-change: color;
+				}
+
+				.is-not-touch .projects-page .gallery-section .list .slides .item:hover .title{
+					color: #7A80DF;
+				}
+
+				.is-not-touch .projects-page .gallery-section .list .slides .item:active .title,
+				.is-touch .projects-page .gallery-section .list .slides .item:active .title{
+					color: #5F65CB;
+				}
+
+			@media (max-width: 1440px){
+
+				.projects-page .gallery-section .list .slides .item .title{
+					margin-top: 24px;
+				}
+
+			}
+
+			@media (max-width: 1024px){
+
+				.projects-page .gallery-section .list .slides .item .title{
+					font-size: 20px;
+					line-height: 30px;
+					margin-top: 16px;
+				}
+
+			}
+
+			@media (max-width: 960px){
+
+				.projects-page .gallery-section .list .slides .item .title{
+					font-size: 16px;
+					line-height: 24px;
+					margin-top: 12px;
+				}
+
+			}
+
+				.projects-page .gallery-section .list .slides .item .review{
+					font-size: 16px;
+					line-height: 24px;
+					color: #767676;
+					margin-top: 16px;
+				}
+
+			@media (max-width: 1024px){
+
+				.projects-page .gallery-section .list .slides .item .review{
+					margin-top: 12px;
+				}
+
+			}
+
+			@media (max-width: 960px){
+
+				.projects-page .gallery-section .list .slides .item .review{
+					margin-top: 8px;
+				}
+
+			}
+
+				.projects-page .gallery-section .list .slides .item .features{
+					margin-top: 16px;
+					font-size: 16px;
+					line-height: 24px;
+				}
+
+			@media (max-width: 1024px){
+
+				.projects-page .gallery-section .list .slides .item .features{
+					margin-top: 12px;
+				}
+
+			}
+
+			@media (max-width: 960px){
+
+				.projects-page .gallery-section .list .slides .item .features{
+					margin-top: 8px;
+				}
+
+			}
+
+					.projects-page .gallery-section .list .slides .item .features>*{
+						position: relative;
+						box-sizing: border-box;
+						padding-left: 16px;
+					}
+
+					.projects-page .gallery-section .list .slides .item .features>*+*{
+						margin-top: 8px;
+					}
+
+						.projects-page .gallery-section .list .slides .item .features>*:before{
+							content: '';
+							display: block;
+							position: absolute;
+							top: 8px;
+							left: 0;
+							width: 8px;
+							height: 8px;
+							border-radius: 5px;
+							background: #7A80DF;
+						}
+
+				.projects-page .gallery-section .list .slides .item .more{
+					font-size: 14px;
+					line-height: 22px;
+					margin-top: 16px;
+				}
+
+					.projects-page .gallery-section .list .slides .item .more:before{
+						content: 'Подробнее';
+					}
+
+
+
+
+
+
+
+

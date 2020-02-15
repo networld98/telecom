@@ -1,0 +1,292 @@
+
+
+/*************************************************************************
+
+							  
+						  B   A   S   I   C   S
+
+
+*************************************************************************/
+
+
+
+/*************************************************************************
+
+							   F O N T S
+
+*************************************************************************/
+
+
+@font-face {
+	font-family: 'CeraProBlackItalic';
+	src: url('/assets/fonts/CeraProBlackItalic/CeraProBlackItalic.eot');
+	src: url('/assets/fonts/CeraProBlackItalic/CeraProBlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProBlackItalic/CeraProBlackItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProBlackItalic/CeraProBlackItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProBlackItalic/CeraProBlackItalic.ttf') format('ttf');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProBlack';
+	src: url('/assets/fonts/CeraProBlack/CeraProBlack.eot');
+	src: url('/assets/fonts/CeraProBlack/CeraProBlack.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProBlack/CeraProBlack.woff2') format('woff2'),
+		url('/assets/fonts/CeraProBlack/CeraProBlack.woff') format('woff'),
+		url('/assets/fonts/CeraProBlack/CeraProBlack.ttf') format('ttf');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CeraProLightItalic';
+	src: url('/assets/fonts/CeraProLightItalic/CeraProLightItalic.eot');
+	src: url('/assets/fonts/CeraProLightItalic/CeraProLightItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProLightItalic/CeraProLightItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProLightItalic/CeraProLightItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProLightItalic/CeraProLightItalic.ttf') format('ttf');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProBold';
+	src: url('/assets/fonts/CeraProBold/CeraProBold.eot');
+	src: url('/assets/fonts/CeraProBold/CeraProBold.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProBold/CeraProBold.woff2') format('woff2'),
+		url('/assets/fonts/CeraProBold/CeraProBold.woff') format('woff'),
+		url('/assets/fonts/CeraProBold/CeraProBold.ttf') format('ttf');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CeraProMedium';
+	src: url('/assets/fonts/CeraProMedium/CeraProMedium.eot');
+	src: url('/assets/fonts/CeraProMedium/CeraProMedium.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProMedium/CeraProMedium.woff2') format('woff2'),
+		url('/assets/fonts/CeraProMedium/CeraProMedium.woff') format('woff'),
+		url('/assets/fonts/CeraProMedium/CeraProMedium.ttf') format('ttf');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CeraProItalic';
+	src: url('/assets/fonts/CeraProItalic/CeraProItalic.eot');
+	src: url('/assets/fonts/CeraProItalic/CeraProItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProItalic/CeraProItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProItalic/CeraProItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProItalic/CeraProItalic.ttf') format('ttf');
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProLight';
+	src: url('/assets/fonts/CeraProLight/CeraProLight.eot');
+	src: url('/assets/fonts/CeraProLight/CeraProLight.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProLight/CeraProLight.woff2') format('woff2'),
+		url('/assets/fonts/CeraProLight/CeraProLight.woff') format('woff'),
+		url('/assets/fonts/CeraProLight/CeraProLight.ttf') format('ttf');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CeraProThinItalic';
+	src: url('/assets/fonts/CeraProThinItalic/CeraProThinItalic.eot');
+	src: url('/assets/fonts/CeraProThinItalic/CeraProThinItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProThinItalic/CeraProThinItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProThinItalic/CeraProThinItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProThinItalic/CeraProThinItalic.ttf') format('ttf');
+	font-weight: 100;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProThin';
+	src: url('/assets/fonts/CeraProThin/CeraProThin.eot');
+	src: url('/assets/fonts/CeraProThin/CeraProThin.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProThin/CeraProThin.woff2') format('woff2'),
+		url('/assets/fonts/CeraProThin/CeraProThin.woff') format('woff'),
+		url('/assets/fonts/CeraProThin/CeraProThin.ttf') format('ttf');
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'CeraProBoldItalic';
+	src: url('/assets/fonts/CeraProBoldItalic/CeraProBoldItalic.eot');
+	src: url('/assets/fonts/CeraProBoldItalic/CeraProBoldItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProBoldItalic/CeraProBoldItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProBoldItalic/CeraProBoldItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProBoldItalic/CeraProBoldItalic.ttf') format('ttf');
+	font-weight: bold;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProMediumItalic';
+	src: url('/assets/fonts/CeraProMediumItalic/CeraProMediumItalic.eot');
+	src: url('/assets/fonts/CeraProMediumItalic/CeraProMediumItalic.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProMediumItalic/CeraProMediumItalic.woff2') format('woff2'),
+		url('/assets/fonts/CeraProMediumItalic/CeraProMediumItalic.woff') format('woff'),
+		url('/assets/fonts/CeraProMediumItalic/CeraProMediumItalic.ttf') format('ttf');
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'CeraProRegular';
+	src: url('/assets/fonts/CeraProRegular/CeraProRegular.eot');
+	src: url('/assets/fonts/CeraProRegular/CeraProRegular.eot?#iefix') format('embedded-opentype'),
+		url('/assets/fonts/CeraProRegular/CeraProRegular.woff2') format('woff2'),
+		url('/assets/fonts/CeraProRegular/CeraProRegular.woff') format('woff'),
+		url('/assets/fonts/CeraProRegular/CeraProRegular.ttf') format('ttf');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+/*************************************************************************
+
+							  B A S I C S
+
+*************************************************************************/
+
+
+*{
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	outline:none;
+	cursor:default;
+	max-height: 999999px;
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+}
+
+b,strong{
+	font: inherit;
+	/*font-weight: inherit;*/
+	font-style: inherit;
+	cursor: inherit;
+	font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin: 0px;
+	font-weight: 400;
+}
+
+html{
+	display: -webkit-box;
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	min-height: 100%;
+	line-height: 1.2em;
+	font-size: 14px;
+}
+
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	justify-content: flex-start;
+	flex-grow: 1;
+	position: relative;
+	margin: 0;
+	color: #2e2e2e;
+	font-family: CeraProRegular;
+	font-weight: normal;
+}
+
+a{
+	color: inherit;
+	text-decoration:none;
+	cursor: pointer;
+}
+
+input,textarea{
+	cursor: inherit;
+	font-size:inherit;
+	color:inherit;
+	font-family:inherit;
+	padding: 0;
+	margin: 0;
+	text-indent: 0;
+	background: none;
+	border: none;
+	resize: none;
+	box-shadow: none;
+	outline: none;
+}
+
+p{
+	margin:0;
+	padding:0;
+}
+
+
+a *{
+	cursor:inherit;
+}
+
+button
+{
+	cursor:inherit;
+	padding: 0;
+	border:none;
+	margin: 0px;
+	background: none;
+	font: inherit;
+}
+
+	button *{
+		cursor:inherit;
+	}
+
+
+ul,ol,li{
+	display:block;
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+input[type=number]{
+	-moz-appearance:textfield;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+	-webkit-appearance: none;
+}
+
+.no-transition{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+.no-transition-recursive,
+.no-transition-recursive *{
+	-webkit-transition: none !important;
+	-moz-transition: none !important;
+	-ms-transition: none !important;
+	transition: none !important;
+}
+
+
+.is-ios,
+.is-ios *{
+	cursor: pointer !important;
+}
+
+

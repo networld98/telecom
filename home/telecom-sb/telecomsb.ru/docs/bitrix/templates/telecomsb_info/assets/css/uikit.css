@@ -1,0 +1,517 @@
+
+
+/*************************************************************************
+
+
+                         U   I       K   I   T
+
+
+*************************************************************************/
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+.blue-href{
+	display: block;
+	position: relative;
+	font-size: 16px;
+	line-height: 24px;
+	-webkit-transition: color 200ms ease;
+	-moz-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	transition: color 200ms ease;
+	will-change: color;
+	color: #7A80DF;
+}
+
+.is-not-touch .blue-href:hover,
+.is-touch .blue-href:active,
+.is-not-touch .yellow-href-wrapper:hover .blue-href,
+.is-touch .yellow-href-wrapper:active .blue-href{
+	color: #5F65CB;
+}
+
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+.blue-underlined-href{
+	display: block;
+	position: relative;
+	font-size: 16px;
+	line-height: 24px;
+	color: #7A80DF;
+	-webkit-transition: color 200ms ease;
+	-moz-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	transition: color 200ms ease;
+	will-change: color;
+}
+
+.blue-underlined-href:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: calc(50% + .5em + 1px);
+	width: 100%;
+	height: 0;
+	border-top: 1px solid #7A80DF;
+	opacity: .4;
+	-webkit-transition: opacity 200ms ease;
+	-moz-transition: opacity 200ms ease;
+	-ms-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+	will-change: opacity;
+}
+
+.is-not-touch .blue-underlined-href:hover,
+.is-touch .blue-underlined-href:active,
+.is-not-touch .blue-underlined-href-wrapper:hover .blue-underlined-href,
+.is-touch .blue-underlined-href-wrapper:active .blue-underlined-href{
+	color: #5F65CB;
+}
+
+.is-not-touch .blue-underlined-href:hover:before,
+.is-touch .blue-underlined-href:active:before,
+.is-not-touch .blue-underlined-href-wrapper:hover .blue-underlined-href:before,
+.is-touch .blue-underlined-href-wrapper:active .blue-underlined-href:before{
+	opacity: 0;
+}
+
+
+
+/*************************************************************************
+
+                         Y E L L O W   H R E F
+
+*************************************************************************/
+
+.yellow-href{
+	display: block;
+	position: relative;
+	font-family: CeraProBold;
+	font-size: 16px;
+	line-height: 24px;
+	color: inherit;
+	-webkit-transition: color 200ms ease;
+	-moz-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	transition: color 200ms ease;
+	will-change: color;
+}
+
+.is-not-touch .yellow-href:hover,
+.is-touch .yellow-href:active,
+.is-not-touch .yellow-href-wrapper:hover .yellow-href,
+.is-touch .yellow-href-wrapper:active .yellow-href{
+	color: #FFC700;
+}
+
+
+
+/*************************************************************************
+
+                 Y E L L O W   U N D E R L I N E D   H R E F
+
+*************************************************************************/
+
+.yellow-underlined-href{
+	display: block;
+	position: relative;
+	font-family: CeraProBold;
+	font-size: 16px;
+	line-height: 24px;
+	color: inherit;
+}
+
+.yellow-underlined-href:after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 50%;
+	left: 0;
+	bottom: 0px;
+	min-width: 42px;
+	border-top: 3px solid #FFC700;
+	-webkit-transition: width 200ms ease;
+	-moz-transition: width 200ms ease;
+	-ms-transition: width 200ms ease;
+	transition: width 200ms ease;
+	will-change: width;
+}
+
+.is-not-touch .yellow-underlined-href-wrapper:hover .yellow-underlined-href:after,
+.is-touch .yellow-underlined-href-wrapper:active .yellow-underlined-href:after,
+.is-not-touch .yellow-underlined-href:hover:after,
+.is-touch .yellow-underlined-href:active:after{
+	width: 100%;
+}
+
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+
+.input-line{
+	position: relative;
+	height: 38px;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 36px;
+	border-bottom: 2px solid #C4C4C4;
+	color: #2e2e2e;
+	-webkit-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	-moz-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	-ms-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	will-change: border-bottom-color,color;
+}
+
+.input-line>font{
+	display: none;
+}
+
+.input-line,
+.input-line *{
+	cursor: text;
+}
+
+.input-line.focus{
+	color: rgba(46,46,46,.4);
+}
+
+.input-line.filled{
+	color: rgba(46,46,46,0);
+}
+
+.input-line.focus,
+.input-line.filled{
+	border-bottom-color: #a2a2a2;
+}
+
+.input-line.failed{
+	border-bottom-color: #FF0013;
+}
+
+.input-line input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 36px;
+	width: 100%;
+	z-index: 1;
+	color: #2e2e2e;
+}
+
+.input-line.failed input{
+	color: #FF0013;
+}
+
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+
+.input-text{
+	position: relative;
+	height: 78px;
+	box-sizing: border-box;
+	font-size: 14px;
+	line-height: 22px;
+	border-bottom: 2px solid #C4C4C4;
+	color: #2e2e2e;
+	-webkit-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	-moz-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	-ms-transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	transition:
+		border-bottom-color 200ms ease,
+		color 200ms ease
+	;
+	will-change: border-bottom-color,color;
+}
+
+.input-text>font{
+	display: none;
+}
+
+.input-text,
+.input-text *{
+	cursor: text;
+}
+
+.input-text.focus{
+	color: rgba(46,46,46,.4);
+}
+
+.input-text.filled{
+	color: rgba(46,46,46,0);
+}
+
+.input-text.focus,
+.input-text.filled{
+	border-bottom-color: #a2a2a2;
+}
+
+.input-text.failed{
+	border-bottom-color: #FF0013;
+}
+
+.input-text textarea{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 76px;
+	width: 100%;
+	z-index: 1;
+	color: #2e2e2e;
+}
+
+.input-text.failed textarea{
+	color: #FF0013;
+}
+
+.input-text textarea::-webkit-scrollbar{
+	width: 4px;
+}
+
+.input-text textarea::-webkit-scrollbar-track{
+	background: transparent;
+}
+
+.input-text textarea::-webkit-scrollbar-thumb{
+	background-clip: padding-box;
+	background: #c4c4c4;
+	border-radius: 3px;
+}
+
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+
+.button{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #7A80DF;
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 24px;
+	height: 56px;
+	border: 3px solid #7A80DF;
+	font-family: CeraProBold;
+	cursor: pointer;
+	-webkit-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	-moz-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	-ms-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	will-change: background, border-color, color;
+}
+
+.is-not-touch .button:hover{
+	background: #7A80DF;
+	border-color: #7A80DF;
+	color: #fff;
+}
+
+.is-not-touch .button:active,
+.is-touch .button:active{
+	background: #5F65CB;
+	border-color: #5F65CB;
+	color: #fff;
+}
+
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+
+form input[type=submit]{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: #7A80DF;
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 24px;
+	height: 56px;
+	border: 3px solid #7A80DF;
+	font-family: CeraProBold;
+	cursor: pointer;
+	-webkit-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	-moz-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	-ms-transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	transition:
+		background 200ms ease,
+		border-color 200ms ease,
+		color 200ms ease
+	;
+	will-change: background, border-color, color;
+}
+
+.is-not-touch form input[type=submit]:hover{
+	background: #7A80DF;
+	border-color: #7A80DF;
+	color: #fff;
+}
+
+.is-not-touch form input[type=submit]:active,
+.is-touch form input[type=submit]:active{
+	background: #5F65CB;
+	border-color: #5F65CB;
+	color: #fff;
+}
+
+
+/*************************************************************************
+
+                               H R E F
+
+*************************************************************************/
+
+
+.input-file{
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	padding-left: 26px;
+	font-size: 14px;
+	line-height: 22px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.input-file,
+.input-file *{
+	cursor: pointer;
+}
+
+.input-file *{
+	position: initial;
+	pointer-events: none;
+}
+
+.input-file input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: red;
+	pointer-events: initial;
+	opacity: 0;
+}
+
+
+.input-file:before,
+.input-file:after{
+	content: '';
+	display: block;
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	left: 0;
+	top: calc(50% - 9px);
+	background: url(/assets/img/attach.svg) no-repeat center center/contain;
+	pointer-events: none;
+}
+
+.input-file:after{
+	background: url(/assets/img/attach-hovered.svg) no-repeat center center/contain;
+	opacity: 0;
+	-webkit-transition: opacity 200ms ease;
+	-moz-transition: opacity 200ms ease;
+	-ms-transition: opacity 200ms ease;
+	transition: opacity 200ms ease;
+	will-change: opacity;
+}
+
+.is-not-touch .input-file:hover:after,
+.is-touch .input-file:active:after{
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+

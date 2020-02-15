@@ -1,0 +1,178 @@
+
+
+/*************************************************************************
+
+
+                        G   E   N   E   R   A   L
+
+
+*************************************************************************/
+
+
+/*************************************************************************
+
+                             C O M M O N S
+
+*************************************************************************/
+
+
+.nopage-page .top-section{
+	flex-grow: 1;
+	box-sizing: border-box;
+}
+
+.nopage-page .top-section>*{
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	flex-grow: 1;
+	flex-basis: 0;
+	min-height: 720px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -20px/602px auto;
+	padding-bottom: 80px;
+	box-sizing: border-box;
+}
+
+@media (max-width: 1440px){
+
+.nopage-page .top-section>*{
+	min-height: 546px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -120px/602px auto;
+}
+
+}
+
+@media (max-width: 1280px){
+
+.nopage-page .top-section>*{
+	min-height: 366px;
+	padding-bottom: 64px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -60px/486px auto;
+}
+
+}
+
+@media (max-width: 1024px){
+
+.nopage-page .top-section>*{
+	min-height: 250px;
+	padding-bottom: 56px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -20px/393px auto;
+}
+
+}
+
+@media (max-width: 960px){
+
+.nopage-page .top-section>*{
+	justify-content: flex-start;
+	min-height: 640px;
+	padding-bottom: 48px;
+	padding-top: 24px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -20px/353px auto;
+}
+
+}
+
+@media (max-width: 640px){
+
+.nopage-page .top-section>*{
+	justify-content: flex-start;
+	min-height: 380px;
+	padding-bottom: 32px;
+	padding-top: 16px;
+	background: url(/assets/img/telescope.svg) no-repeat right bottom -40px/225px auto;
+}
+
+}
+
+.nopage-page .top-section .info{}
+
+	.nopage-page .top-section .info .header{
+		font-size: 280px;
+		line-height: 280px;
+		font-family: CeraProBold;
+	}
+
+@media (max-width: 1280px){
+
+	.nopage-page .top-section .info .header{
+		font-size: 240px;
+		line-height: 240px;
+	}
+
+}
+
+@media (max-width: 1024px){
+
+	.nopage-page .top-section .info .header{
+		font-size: 200px;
+		line-height: 200px;
+	}
+
+}
+
+@media (max-width: 960px){
+
+	.nopage-page .top-section .info .header{
+		font-size: 160px;
+		line-height: 160px;
+	}
+
+}
+
+@media (max-width: 640px){
+
+	.nopage-page .top-section .info .header{
+		font-size: 100px;
+		line-height: 100px;
+	}
+
+}
+
+	.nopage-page .top-section .info .text{
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+@media (max-width: 1024px){
+
+	.nopage-page .top-section .info .text{
+		max-width: 565px;
+	}
+
+}
+
+@media (max-width: 960px){
+
+	.nopage-page .top-section .info .text{
+		font-size: 16px;
+		line-height: 24px;
+		max-width: 435px;
+	}
+
+}
+
+		.nopage-page .top-section .info .text a{
+			display: inline-block;
+			vertical-align: top;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
