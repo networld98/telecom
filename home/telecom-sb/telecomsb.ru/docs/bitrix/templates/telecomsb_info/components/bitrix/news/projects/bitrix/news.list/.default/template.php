@@ -33,11 +33,15 @@ $this->setFrameMode(true);
                             <?if($arParams["DISPLAY_NAME"]!="N" && $arItem["NAME"]):?>
                                 <div class="title"><?echo $arItem["NAME"]?></div>
                             <?endif;?>
-                            <?if($arParams["DISPLAY_DETAIL_TEXT"]!="N" && $arItem["DETAIL_TEXT"]):?>
+                            <?if($arItem["PREVIEW_TEXT"]!= NULL){?>
+                                <div class="review">
+                                    <?echo $arItem["PREVIEW_TEXT"];?>
+                                </div>
+                            <?}else{?>
                                 <div class="review">
                                     <?echo $arItem["DETAIL_TEXT"];?>
                                 </div>
-                            <?endif;?>
+                            <?}?>
                             <div class="features">
                             <?foreach ($arItem['PROPERTIES']['LIST']['VALUE'] as $item){?>
                             <div><?=$item?></div>

@@ -1,7 +1,8 @@
-<? if ($APPLICATION->GetCurPage(false) !== '/info/about/'): ?>
+<? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/'){
+}else{?>
 </div>
-<? endif; ?>
-<footer class="page-footer padded"><div class="padded-inner">
+<?}?>
+    <footer class="page-footer padded"><div class="padded-inner">
         <div class="info">
             <?$APPLICATION->IncludeFile("/info/include/copyright.php", Array(), Array(
                 "MODE"      => "php",
@@ -9,6 +10,7 @@
                 "TEMPLATE"  => "section_include_template.php"
             ));?>
         </div>
+
         <?$APPLICATION->IncludeFile("/info/include/footer_contacts.php", Array(), Array(
                 "MODE"      => "php",
                 "NAME"      => "Редактирование включаемой области раздела",

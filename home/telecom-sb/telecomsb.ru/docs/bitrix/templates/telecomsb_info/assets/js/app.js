@@ -109,7 +109,13 @@ $document.ready(function(){
 	},2000)
 
 	documentReady.resolve();
-	
+
+    $document.on('click','.partner-popup .close',function(){
+
+        $(this).parents('.partner-popup:first').removeClass('shown');
+
+    });
+
 });
 
 

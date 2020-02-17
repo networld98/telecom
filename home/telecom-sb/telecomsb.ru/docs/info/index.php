@@ -43,7 +43,7 @@ CModule::IncludeModule('iblock');
                                     <a href="<?=$arFields["DETAIL_PAGE_URL"]?>" class="swiper-slide">
                                         <div class="image" style="background-image: url(<? echo $img['src']?>"></div>
                                         <div class="info">
-                                            <div class="date"><?=$arFields["TIMESTAMP_X"]?></div>
+                                            <div class="date"><? echo PHPFormatDateTime($arFields["TIMESTAMP_X"], "d.m.Y");?></div>
                                             <div class="title"><?=$arFields["NAME"]?></div>
                                             <div class="text"><?echo mb_strimwidth($arFields["DETAIL_TEXT"], 0, 50, "..."); ?></div>
                                             <div class="more yellow-underlined-href"></div>
@@ -67,4 +67,60 @@ CModule::IncludeModule('iblock');
                 </div>
             </div>
     </div>
+<?foreach ($customers as $item){
+    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+    ?>
+    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
+        <div>
+            <div class="close"></div>
+            <div class="header"><?=$item['NAME']?></div>
+            <div class="info">
+                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>"/></div>
+                <div class="text">
+                    <div>
+                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
+                        <p><?=$item['DETAIL_TEXT']?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?}?>
+<?foreach ($partners as $item){
+    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+    ?>
+    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
+        <div>
+            <div class="close"></div>
+            <div class="header"><?=$item['NAME']?></div>
+            <div class="info">
+                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>" /></div>
+                <div class="text">
+                    <div>
+                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
+                        <p><?=$item['DETAIL_TEXT']?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?}?>
+    <script>
+        $(document).ready(function() {
+            <?foreach ($customers as $item){
+            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+            ?>
+            $('#slide-<?=$item["ID"]?>').click(function () {
+                $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
+            });
+            <?}?>
+            <?foreach ($partners as $item){
+            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+            ?>
+            $('#slide-<?=$item["ID"]?>').click(function () {
+                $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
+            });
+            <?}?>
+        });
+    </script>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

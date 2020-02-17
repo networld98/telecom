@@ -614,14 +614,6 @@ resize();
 // });
 
 
-$document.on('click','.partner-popup .close',function(){
-
-	$(this).parents('.partner-popup:first').removeClass('shown');
-
-});
-
-
-
 
 
 });

@@ -425,9 +425,13 @@
 		flex-direction: row;
 		align-items: stretch;
 		justify-content: flex-start;
-		border-left: 2px solid #C4C4C4;
-		border-right: 2px solid #C4C4C4;
 		text-align: center;
+	}
+	.news-page .list-section .nav .prev-pages{
+		border-left: 2px solid #C4C4C4;
+	}
+	.news-page .list-section .nav .next-pages{
+		border-right: 2px solid #C4C4C4;
 	}
 
 		.news-page .list-section .nav .pages>*{

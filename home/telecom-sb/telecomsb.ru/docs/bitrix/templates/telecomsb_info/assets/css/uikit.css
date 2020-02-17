@@ -507,6 +507,10 @@ form input[type=submit]{
 	opacity: 1;
 }
 
+.form .error {
+	margin-top: 40px;
+	text-align: center;
+}
 
 
 

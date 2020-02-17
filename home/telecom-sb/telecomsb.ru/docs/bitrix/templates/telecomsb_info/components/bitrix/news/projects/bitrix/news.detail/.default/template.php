@@ -12,13 +12,14 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<div class="page-content project-page">
-    <div class="title-section padded"><div class="padded-inner">
-            <a href="/info/projects/" class="back">К списку проектов</a>
-            <h1 class="header"><?=$arResult["NAME"]?></h1>
+<div class="page-content-wrapper">
+    <div class="page-content project-page">
+        <div class="title-section padded"><div class="padded-inner">
+                <a href="/info/projects/" class="back">К списку проектов</a>
+                <h1 class="header"><?=$arResult["NAME"]?></h1>
+            </div>
         </div>
-    </div>
-    <div class="info-section padded"><div class="padded-inner">
+        <div class="info-section padded"><div class="padded-inner">
             <?if($arParams["DISPLAY_DETAIL_TEXT"]!="N" && $arResult["DETAIL_TEXT"]):?>
                 <div class="review">
                     <?echo $arResult["DETAIL_TEXT"];?>
@@ -29,7 +30,11 @@ $this->setFrameMode(true);
                 <div>
                     <div class="title">Клиент</div>
                     <div class="value text">
-                        <?echo htmlspecialchars_decode($arResult["PROPERTIES"]["CLIENT"]["VALUE"]['TEXT']);?>
+                        <?$obElement = CIBlockElement::GetByID($arResult["PROPERTIES"]["CLIENT"]["VALUE"]);
+                        if($arEl = $obElement->GetNext()){?>
+                            <?$customers[] = $arEl;?>
+                            <a id="slide-<?=$arEl['ID']?>"><?=$arEl['NAME']?></a>
+                        <?}?>
                     </div>
                 </div>
                 <?endif;?>
@@ -55,7 +60,8 @@ $this->setFrameMode(true);
                         <?foreach($arResult["PROPERTIES"]['BRANDS']['VALUE'] as $item){?>
                             <?$obElement = CIBlockElement::GetByID($item);
                             if($arEl = $obElement->GetNext()){?>
-                                <a class="blue-underlined-href" href="<?=$arEl['~PREVIEW_TEXT']?>"><?=$arEl['NAME']?></a>
+                                <?$partners[] = $arEl;?>
+                                <a class="blue-underlined-href" id="slide-<?=$arEl['ID']?>"><?=$arEl['NAME']?></a>
                             <?}?>
                         <?}?>
                     </div>
@@ -89,4 +95,61 @@ $this->setFrameMode(true);
                 <div class="counter"><div>1</div><div><?=count($arResult['PROPERTIES']['MORE_PHOTO']['VALUE'])?></div></div>
             </div>
         </div>
+    </div>
 </div>
+<?foreach ($customers as $item){
+    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+    ?>
+    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
+        <div>
+            <div class="close"></div>
+            <div class="header"><?=$item['NAME']?></div>
+            <div class="info">
+                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>"/></div>
+                <div class="text">
+                    <div>
+                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
+                        <p><?=$item['DETAIL_TEXT']?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?}?>
+<?foreach ($partners as $item){
+    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+    ?>
+    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
+        <div>
+            <div class="close"></div>
+            <div class="header"><?=$item['NAME']?></div>
+            <div class="info">
+                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>" /></div>
+                <div class="text">
+                    <div>
+                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
+                        <p><?=$item['DETAIL_TEXT']?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<?}?>
+<script>
+    $(document).ready(function() {
+        <?foreach ($customers as $item){
+        $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+        ?>
+        $('#slide-<?=$item["ID"]?>').click(function () {
+            $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
+        });
+        <?}?>
+        <?foreach ($partners as $item){
+        $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+        ?>
+        $('#slide-<?=$item["ID"]?>').click(function () {
+            $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
+        });
+        <?}?>
+    });
+</script>

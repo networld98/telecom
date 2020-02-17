@@ -143,41 +143,89 @@ ymaps.ready(()=>{
 (()=>{
 
 
-$('.contacts-page .form-section .form input[name=form_text_2]').mask('+7 (000) 000-00-00');
+
+function initForm(){
+
+	const $phone = $('.contacts-page .form-section .form input[name=form_text_2]');
+
+	if(!$phone.hasClass('masked')) $phone.addClass('masked').mask('+7 (000) 000-00-00');
+
+	$('.contacts-page form textarea,.contacts-page form .input input').each(function(){
+
+		const
+			$this = $(this),
+			$input = $this.parents('.input:first');
+
+		if($input.length!=1) return;
 
 
+		if($this.is('input[type=text],input[type=email],input[type=tel],textarea')){
 
-$('.contacts-page form textarea,.contacts-page form input').each(function(){
+			const value = clean_spaces($this.val());
 
+			if(value){
 
-	const
-		$this = $(this),
-		$input = $this.parents('.input:first');
+				$input.addClass('filled');
 
-
-	if($input.length!=1) return;
-
-
-	if($this.is('textarea')){
-
-		$input.addClass('input-text');
-
-	}else if($this.attr('type')=='submit'){
-
-		return;
-
-	}else if($this.attr('type')=='file'){
-
-		$input.addClass('input-file');
-
-	}else{
-
-		$input.addClass('input-line');
-
-	}
+			}else $this.val('');
 
 
-});
+		}else if($this.is('input[type=file]')){
+
+			const file = (this.files&&this.files[0]?this.files[0]:null);
+
+
+			const container = $input[0];
+
+			for(const node of container.childNodes) if(node.nodeType==3) container.removeChild(node);
+
+
+			container.appendChild(document.createTextNode(file?file.name:'Прикрепить файл'));
+
+		}
+
+
+		if($input.hasClass('inited')) return;
+
+		$input.hasClass('inited')
+
+		if($this.is('textarea')){
+
+			$input.addClass('input-text');
+
+		}else if($this.attr('type')=='file'){
+
+			$input.addClass('input-file');
+
+		}else{
+
+			$input.addClass('input-line');
+
+		}
+
+		
+
+
+	});
+
+}
+
+initForm();
+
+
+if(window.MutationObserver){
+
+	const observer = new MutationObserver(mutations=>{ initForm(); });
+
+	observer.observe(document.body, {
+
+		childList: true,
+
+		subtree: true,
+
+	});
+
+}else $('body:first').on('DOMSubtreeModified',()=>{initForm()});
 
 
 

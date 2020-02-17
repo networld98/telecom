@@ -10,4 +10,5 @@
         <?endif?>
         <?$previousLevel = $arItem["DEPTH_LEVEL"];?>
     <?endforeach?>
+    <a href="/magazin/">Магазин</a>
 <?endif?>

@@ -11,7 +11,7 @@ if($arResult["NavPageCount"] > 1)
         <?if ($arResult["NavPageNomer"] != 1){?>
             <a class="switch prev" href="<?=$arResult["sUrlPath"]?>?<?=$strNavQueryString?>PAGEN_<?=$arResult["NavNum"]?>=<?=($arResult["NavPageNomer"]-1)?>"></a>
         <?}?>
-        <div class="pages">
+        <div class="pages<?if ($arResult["NavPageNomer"] != 1){?> prev-pages<?}?><?if ($arResult["NavPageNomer"] < $arResult["NavPageCount"]){?> next-pages<?}?>">
             <?
             if($arResult["bDescPageNumbering"] === true):
                 $bFirst = true;

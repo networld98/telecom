@@ -73,7 +73,7 @@ $APPLICATION->SetTitle("Телекомсб | Проекты");
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY1" => "SORT",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",

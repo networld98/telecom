@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-    <? if ($APPLICATION->GetCurPage(false) !== '/info/about/'): ?>
-    <div class="page-content-wrapper">
-    <? endif; ?>
-
+    <? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/'){
+    }else{?>
+        <div class="page-content-wrapper">
+    <?}?>
