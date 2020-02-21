@@ -45,7 +45,7 @@ CModule::IncludeModule('iblock');
                                         <div class="info">
                                             <div class="date"><? echo PHPFormatDateTime($arFields["TIMESTAMP_X"], "d.m.Y");?></div>
                                             <div class="title"><?=$arFields["NAME"]?></div>
-                                            <div class="text"><?echo mb_strimwidth($arFields["DETAIL_TEXT"], 0, 50, "..."); ?></div>
+                                            <div class="text"><?echo mb_strimwidth($arFields["DETAIL_TEXT"], 0, 130, "..."); ?></div>
                                             <div class="more yellow-underlined-href"></div>
                                         </div>
                                     </a>

@@ -143,8 +143,19 @@ ymaps.ready(()=>{
 (()=>{
 
 
+let last_state = [];
+
 
 function initForm(){
+
+	let state = $('.contacts-page .form-section .form').find('input,textarea').toArray();
+
+	if(state.every(el=>last_state.some(variant=>variant.compareDocumentPosition(el)==0))) return;
+
+	// console.log('initForm...',state.length);
+
+	last_state = state;
+
 
 	const $phone = $('.contacts-page .form-section .form input[name=form_text_2]');
 
@@ -226,7 +237,6 @@ if(window.MutationObserver){
 	});
 
 }else $('body:first').on('DOMSubtreeModified',()=>{initForm()});
-
 
 
 $document.on('change','.contacts-page .input-file input[type=file]',function(){

@@ -109,10 +109,20 @@
 	margin-top: 48px;
 }
 
+@media (max-width: 16000px){
+
+.contacts-page .info-section .info{
+	position: relative;
+	width: calc(100% + 32px);
+}
+
+}
+
 @media (max-width: 1280px){
 
 .contacts-page .info-section .info{
 	margin-top: 40px;
+	width: auto;
 }
 
 }
@@ -151,7 +161,7 @@
 		flex-basis: 100%;
 	}
 
-@media (max-width: 1250px){
+@media (max-width: 1280px){
 
 	.contacts-page .info-section .info .sep{
 		display: block;
@@ -160,15 +170,23 @@
 }
 
 	.contacts-page .info-section .info .item{
-		margin: 0 96px 24px 0;
+		margin: 0 56px 24px 0;
 		white-space: nowrap;
+	}
+
+	.contacts-page .info-section .info .item.address{
+		margin-right: 96px;
 	}
 
 @media (max-width: 1600px){
 
 	.contacts-page .info-section .info .item{
 		margin-right: 32px;
-		min-width: 172px;
+		/*min-width: 172px;*/
+	}
+
+	.contacts-page .info-section .info .item.address{
+		margin-right: 32px;
 	}
 
 }
@@ -176,16 +194,25 @@
 @media (max-width: 1280px){
 
 	.contacts-page .info-section .info .item{
+		margin-right: 40px;
+		margin-bottom: 40px;
+	}
+
+	.contacts-page .info-section .info .item.address{
 		margin-right: 48px;
-		min-width: initial;
 	}
 
 }
 
-@media (max-width: 1250px){
+@media (max-width: 1024px){
 
 	.contacts-page .info-section .info .item{
+		margin-right: 48px;
 		margin-bottom: 32px;
+	}
+
+	.contacts-page .info-section .info .item.address{
+		margin-right: 64px;
 	}
 
 }
@@ -196,16 +223,22 @@
 		margin: 0 40px 24px 0;
 	}
 
+	.contacts-page .info-section .info .item.address{
+		margin-right: 56px;
+	}
+
 }
 
 @media (max-width: 640px){
 
-	.contacts-page .info-section .info .item{
+	.contacts-page .info-section .info .item,
+	.contacts-page .info-section .info .item.address{
 		margin: 0 0 24px;
 		white-space: initial;
 	}
 
 }
+
 
 		.contacts-page .info-section .info .item .title{
 			font-size: 18px;
@@ -238,7 +271,7 @@
 
 	}
 
-		@media (max-width: 1250px){
+		@media (max-width: 1280px){
 
 			.contacts-page .info-section .info .item.worktime .value>*{
 				display: inline-block;
@@ -333,14 +366,15 @@
 @media (max-width: 1280px){
 
 .contacts-page .info-section .map{
+	margin-top: 8px;
 }
 
 }
 
-@media (max-width: 1250px){
+@media (max-width: 1024px){
 
 .contacts-page .info-section .map{
-	margin-top: 0;
+	margin-top: 0px;
 }
 
 }

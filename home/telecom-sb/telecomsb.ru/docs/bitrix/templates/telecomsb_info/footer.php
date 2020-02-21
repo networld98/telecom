@@ -16,30 +16,19 @@
                 "NAME"      => "Редактирование включаемой области раздела",
                 "TEMPLATE"  => "section_include_template.php"
             ));?>
-        <div class="nav">
-            <div>
-                <?$APPLICATION->IncludeComponent("bitrix:menu","footer_info",Array(
-                        "ROOT_MENU_TYPE" => "topinfo",
-                        "MAX_LEVEL" => "1",
-                        "CHILD_MENU_TYPE" => "topinfo",
-                        "USE_EXT" => "Y",
-                        "DELAY" => "N",
-                        "ALLOW_MULTI_SELECT" => "Y",
-                        "MENU_CACHE_TYPE" => "N",
-                        "MENU_CACHE_TIME" => "3600",
-                        "MENU_CACHE_USE_GROUPS" => "Y",
-                        "MENU_CACHE_GET_VARS" => ""
-                    )
-                );?>
-            </div>
-            <div>
-                <?/*$APPLICATION->IncludeFile("/info/include/footer_social.php", Array(), Array(
-                    "MODE"      => "php",
-                    "NAME"      => "Редактирование включаемой области раздела",
-                    "TEMPLATE"  => "section_include_template.php"
-                ));*/?>
-            </div>
-        </div>
+            <?$APPLICATION->IncludeComponent("bitrix:menu","footer_info",Array(
+                    "ROOT_MENU_TYPE" => "topinfo",
+                    "MAX_LEVEL" => "1",
+                    "CHILD_MENU_TYPE" => "topinfo",
+                    "USE_EXT" => "Y",
+                    "DELAY" => "N",
+                    "ALLOW_MULTI_SELECT" => "Y",
+                    "MENU_CACHE_TYPE" => "N",
+                    "MENU_CACHE_TIME" => "3600",
+                    "MENU_CACHE_USE_GROUPS" => "Y",
+                    "MENU_CACHE_GET_VARS" => ""
+                )
+            );?>
     </div>
 </footer>
 </div>

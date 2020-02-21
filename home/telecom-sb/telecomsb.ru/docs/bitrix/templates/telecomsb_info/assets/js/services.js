@@ -111,7 +111,7 @@ function resize(){
 
 		const ww = $window.outerWidth();
 
-		const ITEMS_PER_LINE = ww>960?4:2;
+		const ITEMS_PER_LINE = ww>960?5:2;
 
 		console.log(ITEMS_PER_LINE);
 

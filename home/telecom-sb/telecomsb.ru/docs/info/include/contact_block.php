@@ -18,6 +18,12 @@
     </div>
     <div class="sep"></div>
     <div class="item email">
+        <div class="title">Работа с проектами:</div>
+        <div class="value">
+            <div><a class="blue-underlined-href" href="mailto:project@telecomsb.ru">project@telecomsb.ru</a></div>
+        </div>
+    </div>
+    <div class="item email">
         <div class="title">Отдел продаж:</div>
         <div class="value">
             <div><a class="blue-underlined-href" href="mailto:sale@telecomsb.ru">sale@telecomsb.ru</a></div>
