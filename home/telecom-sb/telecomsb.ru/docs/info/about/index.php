@@ -99,7 +99,7 @@ while($ob = $res->GetNextElement()){
                             $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter,false, false, $arSelect);
                             while($ob = $res->GetNextElement()){
                                 $arFields = $ob->GetFields();
-                                $img = CFile::ResizeImageGet($arFields['DETAIL_PICTURE'], array('width'=>193), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+                                $img = CFile::ResizeImageGet($arFields['DETAIL_PICTURE'], array('width'=>193,'height'=>80), BX_RESIZE_IMAGE_PROPORTIONAL, true);
                                 $partners[] = $arFields;?>
                                 <div class="swiper-slide" id="slide-<?=$arFields['ID']?>">
                                     <img src="<?=$img['src'] ?>" alt="<?$arFields['NAME']?>">
@@ -124,7 +124,7 @@ while($ob = $res->GetNextElement()){
                             $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter,false, false, $arSelect);
                             while($ob = $res->GetNextElement()){
                                 $arFields = $ob->GetFields();
-                                $img = CFile::ResizeImageGet($arFields['DETAIL_PICTURE'], array('width'=>193), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+                                $img = CFile::ResizeImageGet($arFields['DETAIL_PICTURE'], array('width'=>150,'height'=>150), BX_RESIZE_IMAGE_PROPORTIONAL, true);
                                 $customers[] = $arFields;?>
                                 <div class="swiper-slide" id="slide-<?=$arFields['ID']?>">
                                     <img src="<?=$img['src'] ?>" alt="<?=$arFields['NAME']?>">
@@ -204,14 +204,14 @@ while($ob = $res->GetNextElement()){
     <script>
         $(document).ready(function() {
             <?foreach ($customers as $item){
-                $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+                $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>230,'height'=>230), BX_RESIZE_IMAGE_PROPORTIONAL, true);
                 ?>
                     $('#slide-<?=$item["ID"]?>').click(function () {
                         $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
                     });
             <?}?>
             <?foreach ($partners as $item){
-            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
+            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>230,'height'=>230), BX_RESIZE_IMAGE_PROPORTIONAL, true);
             ?>
                     $('#slide-<?=$item["ID"]?>').click(function () {
                         $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');

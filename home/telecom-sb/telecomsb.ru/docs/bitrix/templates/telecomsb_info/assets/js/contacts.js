@@ -109,8 +109,8 @@ ymaps.ready(()=>{
 		if(marker) map.geoObjects.remove(marker);
 
 		marker = new ymaps.Placemark([
-			55.824674,
-			37.660084
+            55.820015,
+			37.576492
 		],undefined/*{
 			balloonContentBody:``
 		}*/,{

@@ -17,9 +17,9 @@
                 "TEMPLATE"  => "section_include_template.php"
             ));?>
             <?$APPLICATION->IncludeComponent("bitrix:menu","footer_info",Array(
-                    "ROOT_MENU_TYPE" => "topinfo",
+                    "ROOT_MENU_TYPE" => "footerinfo",
                     "MAX_LEVEL" => "1",
-                    "CHILD_MENU_TYPE" => "topinfo",
+                    "CHILD_MENU_TYPE" => "footerinfo",
                     "USE_EXT" => "Y",
                     "DELAY" => "N",
                     "ALLOW_MULTI_SELECT" => "Y",

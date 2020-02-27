@@ -35,7 +35,7 @@ CModule::IncludeModule('iblock');
                             <div class="swiper-wrapper">
                                 <?
                                 $arFilter = Array("IBLOCK_ID"=>"79","ACTIVE"=>"Y");
-                                $arSelect = Array("ID","NAME","PREVIEW_PICTURE","TIMESTAMP_X","DETAIL_TEXT","DETAIL_PAGE_URL");
+                                $arSelect = Array("ID","NAME","PREVIEW_PICTURE","TIMESTAMP_X","PREVIEW_TEXT","DETAIL_PAGE_URL","PROPERTY_ANONS_TEXT");
                                 $res = CIBlockElement::GetList(Array("SORT"=>"ASC"), $arFilter,false, false, $arSelect);
                                 while($ob = $res->GetNextElement()){
                                     $arFields = $ob->GetFields();
@@ -45,7 +45,13 @@ CModule::IncludeModule('iblock');
                                         <div class="info">
                                             <div class="date"><? echo PHPFormatDateTime($arFields["TIMESTAMP_X"], "d.m.Y");?></div>
                                             <div class="title"><?=$arFields["NAME"]?></div>
-                                            <div class="text"><?echo mb_strimwidth($arFields["DETAIL_TEXT"], 0, 130, "..."); ?></div>
+                                            <div class="text">
+                                                <?if($arFields['PROPERTY_ANONS_TEXT_VALUE']!=NULL){?>
+                                                    <?echo mb_strimwidth(html_entity_decode($arFields['PROPERTY_ANONS_TEXT_VALUE']['TEXT']), 0, 130, "..."); ?>
+                                                <?}else{?>
+                                                    <?echo mb_strimwidth($arFields["PREVIEW_TEXT"], 0, 130, "..."); ?>
+                                                <?}?>
+                                            </div>
                                             <div class="more yellow-underlined-href"></div>
                                         </div>
                                     </a>
@@ -67,60 +73,4 @@ CModule::IncludeModule('iblock');
                 </div>
             </div>
     </div>
-<?foreach ($customers as $item){
-    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-    ?>
-    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
-        <div>
-            <div class="close"></div>
-            <div class="header"><?=$item['NAME']?></div>
-            <div class="info">
-                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>"/></div>
-                <div class="text">
-                    <div>
-                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
-                        <p><?=$item['DETAIL_TEXT']?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<?}?>
-<?foreach ($partners as $item){
-    $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-    ?>
-    <div class="partner-popup partner-popup-<?=$item['ID']?> padded">
-        <div>
-            <div class="close"></div>
-            <div class="header"><?=$item['NAME']?></div>
-            <div class="info">
-                <div class="image"><img src="<?=$imgBig['src']?>" alt="<?=$item['NAME']?>" /></div>
-                <div class="text">
-                    <div>
-                        <div class="preamble"><?=$item['PREVIEW_TEXT']?></div>
-                        <p><?=$item['DETAIL_TEXT']?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-<?}?>
-    <script>
-        $(document).ready(function() {
-            <?foreach ($customers as $item){
-            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-            ?>
-            $('#slide-<?=$item["ID"]?>').click(function () {
-                $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
-            });
-            <?}?>
-            <?foreach ($partners as $item){
-            $imgBig = CFile::ResizeImageGet($item['DETAIL_PICTURE'], array('width'=>380), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-            ?>
-            $('#slide-<?=$item["ID"]?>').click(function () {
-                $('.partner-popup-<?=$item["ID"]?>').first().addClass('shown');
-            });
-            <?}?>
-        });
-    </script>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
