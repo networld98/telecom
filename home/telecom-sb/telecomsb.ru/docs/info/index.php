@@ -52,7 +52,7 @@ CModule::IncludeModule('iblock');
                                                     <?echo mb_strimwidth($arFields["PREVIEW_TEXT"], 0, 130, "..."); ?>
                                                 <?}?>
                                             </div>
-                                            <div class="more yellow-underlined-href"></div>
+                                            <div class="more yellow-underlined-href">Подробнее</div>
                                         </div>
                                     </a>
                                 <?}?>

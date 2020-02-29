@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <div class="page-content-wrapper">
     <div class="page-content project-page">
         <div class="title-section padded"><div class="padded-inner">
-                <a href="/info/projects/" class="back">К списку проектов</a>
+                <a href="/info/projects/" class="back"><?if(CSite::InDir('/en/')){?>To the list of projects<?}else{?>К списку проектов<?}?></a>
                 <h1 class="header"><?=$arResult["NAME"]?></h1>
             </div>
         </div>
@@ -28,7 +28,7 @@ $this->setFrameMode(true);
             <div class="features">
                 <?if($arResult["PROPERTIES"]["CLIENT"]["VALUE"]!= NULL):?>
                 <div>
-                    <div class="title">Клиент</div>
+                    <div class="title"><?if(CSite::InDir('/en/')){?>Client<?}else{?>Клиент<?}?></div>
                     <div class="value text">
                         <?$obElement = CIBlockElement::GetByID($arResult["PROPERTIES"]["CLIENT"]["VALUE"]);
                         if($arEl = $obElement->GetNext()){?>
@@ -40,7 +40,7 @@ $this->setFrameMode(true);
                 <?endif;?>
                 <?if($arResult["PROPERTIES"]["TASK"]["VALUE"]!= NULL):?>
                     <div>
-                        <div class="title">Задача</div>
+                        <div class="title"><?if(CSite::InDir('/en/')){?>Task<?}else{?>Задача<?}?></div>
                         <div class="value text">
                             <?echo htmlspecialchars_decode($arResult["PROPERTIES"]["TASK"]["VALUE"]['TEXT']);?>
                         </div>
@@ -48,24 +48,26 @@ $this->setFrameMode(true);
                 <?endif;?>
                 <?if($arResult["PROPERTIES"]["DECISION"]["VALUE"]!= NULL):?>
                     <div>
-                        <div class="title">Решение</div>
+                        <div class="title"><?if(CSite::InDir('/en/')){?>Decision<?}else{?>Решение<?}?></div>
                         <div class="value text">
                             <?echo htmlspecialchars_decode($arResult["PROPERTIES"]["DECISION"]["VALUE"]['TEXT']);?>
                         </div>
                     </div>
                 <?endif;?>
-                <div>
-                    <div class="title">В&nbsp;проекте использовали бренды:</div>
-                    <div class="value list">
-                        <?foreach($arResult["PROPERTIES"]['BRANDS']['VALUE'] as $item){?>
-                            <?$obElement = CIBlockElement::GetByID($item);
-                            if($arEl = $obElement->GetNext()){?>
-                                <?$partners[] = $arEl;?>
-                                <a class="blue-underlined-href" id="slide-<?=$arEl['ID']?>"><?=$arEl['NAME']?></a>
+                <?if($arResult["PROPERTIES"]["CLIENT"]["VALUE"]!= NULL):?>
+                    <div>
+                        <div class="title"><?if(CSite::InDir('/en/')){?>The following brands were used in the project:<?}else{?>В проекте использовали бренды:<?}?></div>
+                        <div class="value list">
+                            <?foreach($arResult["PROPERTIES"]['BRANDS']['VALUE'] as $item){?>
+                                <?$obElement = CIBlockElement::GetByID($item);
+                                if($arEl = $obElement->GetNext()){?>
+                                    <?$partners[] = $arEl;?>
+                                    <a class="blue-underlined-href" id="slide-<?=$arEl['ID']?>"><?=$arEl['NAME']?></a>
+                                <?}?>
                             <?}?>
-                        <?}?>
+                        </div>
                     </div>
-                </div>
+                <?endif;?>
             </div>
         </div>
     </div>

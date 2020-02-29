@@ -12,14 +12,22 @@
                 <?endif?>
                 <?$previousLevel = $arItem["DEPTH_LEVEL"];?>
             <?endforeach?>
-            <a href="/magazin/">Магазин</a>
+            <a href="/magazin/"><?if(CSite::InDir('/en/')){?>Shop<?}else{?>Магазин<?}?></a>
         <?endif?>
     </div>
     <div>
-        <?/*$APPLICATION->IncludeFile("/info/include/footer_social.php", Array(), Array(
-                    "MODE"      => "php",
-                    "NAME"      => "Редактирование включаемой области раздела",
-                    "TEMPLATE"  => "section_include_template.php"
-                ));*/?>
+    <?/* if(CSite::InDir('/en/')){?>
+        <?$APPLICATION->IncludeFile("/en/include/social.php", Array(), Array(
+            "MODE"      => "php",
+            "NAME"      => "Редактирование включаемой области раздела",
+            "TEMPLATE"  => "section_include_template.php"
+        ));?>
+    <?}else{?>
+        <?$APPLICATION->IncludeFile("/info/include/social.php", Array(), Array(
+            "MODE"      => "php",
+            "NAME"      => "Редактирование включаемой области раздела",
+            "TEMPLATE"  => "section_include_template.php"
+        ));?>
+    <?}*/?>
     </div>
 </div>

@@ -1,8 +1,22 @@
-<? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/'){
+<? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
 }else{?>
 </div>
 <?}?>
     <footer class="page-footer padded"><div class="padded-inner">
+    <? if(CSite::InDir('/en/')) {?>
+        <div class="info">
+            <?$APPLICATION->IncludeFile("/en/include/copyright.php", Array(), Array(
+                "MODE"      => "php",
+                "NAME"      => "Редактирование включаемой области раздела",
+                "TEMPLATE"  => "section_include_template.php"
+            ));?>
+        </div>
+            <?$APPLICATION->IncludeFile("/en/include/footer_contacts.php", Array(), Array(
+                "MODE"      => "php",
+                "NAME"      => "Редактирование включаемой области раздела",
+                "TEMPLATE"  => "section_include_template.php"
+            ));?>
+    <?}else{?>
         <div class="info">
             <?$APPLICATION->IncludeFile("/info/include/copyright.php", Array(), Array(
                 "MODE"      => "php",
@@ -10,12 +24,12 @@
                 "TEMPLATE"  => "section_include_template.php"
             ));?>
         </div>
-
         <?$APPLICATION->IncludeFile("/info/include/footer_contacts.php", Array(), Array(
-                "MODE"      => "php",
-                "NAME"      => "Редактирование включаемой области раздела",
-                "TEMPLATE"  => "section_include_template.php"
-            ));?>
+            "MODE"      => "php",
+            "NAME"      => "Редактирование включаемой области раздела",
+            "TEMPLATE"  => "section_include_template.php"
+        ));?>
+    <?}?>
             <?$APPLICATION->IncludeComponent("bitrix:menu","footer_info",Array(
                     "ROOT_MENU_TYPE" => "footerinfo",
                     "MAX_LEVEL" => "1",

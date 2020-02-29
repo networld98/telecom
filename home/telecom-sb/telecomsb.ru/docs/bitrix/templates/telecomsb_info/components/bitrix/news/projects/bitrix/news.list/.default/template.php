@@ -47,7 +47,7 @@ $this->setFrameMode(true);
                             <div><?=$item?></div>
                             <?}?>
                             </div>
-                            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="more yellow-underlined-href"></a>
+                            <a href="<?=$arItem["DETAIL_PAGE_URL"]?>" class="more yellow-underlined-href"><?if(CSite::InDir('/en/')){?>More details<?}else{?>Подробнее<?}?></a>
                         </div>
                         <?endforeach;?>
                     </div>

@@ -427,7 +427,6 @@ const
 	$social = $nav.children().last().children().toArray().map(el=>$(el));
 
 
-
 $nav.empty();
 
 const $cols = [$('<div></div>'),$('<div></div>'),$('<div></div>')];

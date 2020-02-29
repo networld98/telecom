@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Проекты";
+$sSectionName = "Telecomsb | Projects";
 $arDirProperties = Array(
 
 );

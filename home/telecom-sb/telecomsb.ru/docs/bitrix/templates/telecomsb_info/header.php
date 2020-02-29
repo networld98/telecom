@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="<?=LANGUAGE_ID?>">
+<?if(CSite::InDir('/en/')){?>
+    <html lang="en">
+<?}else{?>
+    <html lang="<?=LANGUAGE_ID?>">
+<?}?>
 <head>
     <title><?=$APPLICATION->ShowTitle();?></title>
     <meta charset="utf-8" />
@@ -36,14 +40,18 @@
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/services.js" ></script>
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/article.js" ></script>
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=7eac357d-9894-4506-85eb-2c6239d0d0cc&lang=ru_RU" type="text/javascript"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=7eac357d-9894-4506-85eb-2c6239d0d0cc&lang=<?if(CSite::InDir('/en/')){?>en_US<?}else{?>ru_RU<?}?>" type="text/javascript"></script>
 
 </head>
 <?if ($USER->IsAdmin()){?><div id="panel"><?$APPLICATION->ShowPanel();?></div><?}?>
 <body>
 <div class="body">
     <header class="page-header padded"><div class="padded-inner">
-            <a href="/info/" class="logo"></a>
+            <?if(CSite::InDir('/en/')){?>
+                <a href="/en/" class="logo" style="	background: url(<?php echo SITE_TEMPLATE_PATH ?>/assets/img/logo_en.svg) no-repeat center center/contain;"></a>
+            <?}else{?>
+                <a href="/info/" class="logo" style="background: url(<?php echo SITE_TEMPLATE_PATH ?>/assets/img/logo.svg) no-repeat center center/contain;"></a>
+            <?}?>
             <?$APPLICATION->IncludeComponent("bitrix:menu","top_info",Array(
                     "ROOT_MENU_TYPE" => "topinfo",
                     "MAX_LEVEL" => "1",
@@ -57,11 +65,23 @@
                     "MENU_CACHE_GET_VARS" => ""
                 )
             );?>
-            <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
-                "MODE"      => "php",
-                "NAME"      => "Редактирование включаемой области раздела",
-                "TEMPLATE"  => "section_include_template.php"
-            ));?>
+            <? if(CSite::InDir('/en/')) {?>
+                <?$APPLICATION->IncludeFile("/en/include/header_phone.php", Array(), Array(
+                    "MODE"      => "php",
+                    "NAME"      => "Редактирование включаемой области раздела",
+                    "TEMPLATE"  => "section_include_template.php"
+                ));?>
+            <?}else{?>
+                <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
+                    "MODE"      => "php",
+                    "NAME"      => "Редактирование включаемой области раздела",
+                    "TEMPLATE"  => "section_include_template.php"
+                ));?>
+            <?}?>
+            <div class="lang">
+                <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){?>current noLink<?}?>" href="/en/">Eng</a>
+                <a class="yellow-underlined-href <?if(CSite::InDir('/info/')){?>current noLink<?}?>" href="/info/">Rus</a>
+            </div>
             <div class="nav-button"><div></div><div></div><div></div></div>
         </div>
     </header>
@@ -85,18 +105,43 @@
                     )
                 );?>
             </nav>
-            <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
-                "MODE"      => "php",
-                "NAME"      => "Редактирование включаемой области раздела",
-                "TEMPLATE"  => "section_include_template.php"
-            ));?>
-            <div class="socials">
-                <a href="https://vk.com/" target="__blank" class="social vk"></a>
-                <a href="https://www.facebook.com/" target="__blank" class="social facebook"></a>
+
+            <? if(CSite::InDir('/en/')){?>
+                <?$APPLICATION->IncludeFile("/en/include/header_phone.php", Array(), Array(
+                    "MODE"      => "php",
+                    "NAME"      => "Редактирование включаемой области раздела",
+                    "TEMPLATE"  => "section_include_template.php"
+                ));?>
+            <?}else{?>
+                <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
+                    "MODE"      => "php",
+                    "NAME"      => "Редактирование включаемой области раздела",
+                    "TEMPLATE"  => "section_include_template.php"
+                ));?>
+            <?}?>
+            <div class="lang">
+                <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){?>current noLink<?}?>" href="/en/">Eng</a>
+                <a class="yellow-underlined-href <?if(CSite::InDir('/info/')){?>current noLink<?}?>" href="/info/">Rus</a>
             </div>
+            <div class="socials">
+                <? if(CSite::InDir('/en/')){?>
+                    <?$APPLICATION->IncludeFile("/en/include/social.php", Array(), Array(
+                        "MODE"      => "php",
+                        "NAME"      => "Редактирование включаемой области раздела",
+                        "TEMPLATE"  => "section_include_template.php"
+                    ));?>
+                <?}else{?>
+                    <?$APPLICATION->IncludeFile("/info/include/social.php", Array(), Array(
+                        "MODE"      => "php",
+                        "NAME"      => "Редактирование включаемой области раздела",
+                        "TEMPLATE"  => "section_include_template.php"
+                    ));?>
+                <?}?>
+            </div>
+
         </div>
     </div>
-    <? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/'){
+    <? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
     }else{?>
         <div class="page-content-wrapper">
     <?}?>

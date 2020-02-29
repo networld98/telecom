@@ -36,7 +36,7 @@ $this->setFrameMode(true);
                                         <?echo $arItem["PREVIEW_TEXT"];?>
                                     </div>
                                 <?endif;?>
-                                <div class="more yellow-underlined-href"></div>
+                                <div class="more yellow-underlined-href"><?if(CSite::InDir('/en/')){?>More details<?}else{?>Подробнее<?}?></div>
                             </div>
                         </a>
                     </article>

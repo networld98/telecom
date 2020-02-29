@@ -17,6 +17,6 @@
 
     <?endforeach?>
 
-    <a href="/magazin/" class="yellow-href-wrapper shop-link"><div class="yellow-href" href="#"></div></a>
+    <a href="/magazin/" class="yellow-href-wrapper shop-link"><div class="yellow-href" href="#"><?if(CSite::InDir('/en/')){?>Shop<?}else{?>Магазин<?}?></div></a>
 </nav>
 <?endif?>
