@@ -14,7 +14,7 @@ $this->setFrameMode(true);
 ?>
 <div class="page-content article-page">
     <div class="back-section padded"><div class="padded-inner">
-            <a class="back" href="/info/news/"><?if(CSite::InDir('/en/')){?>To the list of news<?}else{?>К списку новостей<?}?></a>
+            <a class="back" <?if(CSite::InDir('/en/')){?>href="/en/news/"<?}else{?>href="/news/"<?}?>><?if(CSite::InDir('/en/')){?>To the list of news<?}else{?>К списку новостей<?}?></a>
         </div>
     </div>
     <div class="text-section padded">

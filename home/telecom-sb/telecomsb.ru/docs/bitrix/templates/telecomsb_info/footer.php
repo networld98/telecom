@@ -1,4 +1,4 @@
-<? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
+<? if(CSite::InDir('/projects/') || $APPLICATION->GetCurPage(false) == '/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
 }else{?>
 </div>
 <?}?>
@@ -24,7 +24,7 @@
                 "TEMPLATE"  => "section_include_template.php"
             ));?>
         </div>
-        <?$APPLICATION->IncludeFile("/info/include/footer_contacts.php", Array(), Array(
+        <?$APPLICATION->IncludeFile("/include/footer_contacts.php", Array(), Array(
             "MODE"      => "php",
             "NAME"      => "Редактирование включаемой области раздела",
             "TEMPLATE"  => "section_include_template.php"

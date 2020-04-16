@@ -15,7 +15,7 @@ $this->setFrameMode(true);
 <div class="page-content-wrapper">
     <div class="page-content project-page">
         <div class="title-section padded"><div class="padded-inner">
-                <a href="/info/projects/" class="back"><?if(CSite::InDir('/en/')){?>To the list of projects<?}else{?>К списку проектов<?}?></a>
+                <a <?if(CSite::InDir('/en/')){?>href="/en/projects/"<?}else{?>href="/projects/"<?}?> class="back"><?if(CSite::InDir('/en/')){?>To the list of projects<?}else{?>К списку проектов<?}?></a>
                 <h1 class="header"><?=$arResult["NAME"]?></h1>
             </div>
         </div>

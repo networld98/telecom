@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <?if(CSite::InDir('/en/')){?>
-    <html lang="en">
+<html lang="en">
 <?}else{?>
-    <html lang="<?=LANGUAGE_ID?>">
+<html lang="<?=LANGUAGE_ID?>">
 <?}?>
 <head>
     <title><?=$APPLICATION->ShowTitle();?></title>
@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="<?php echo SITE_TEMPLATE_PATH ?>/assets/css/nopage.css" />
     <link rel="stylesheet" href="<?php echo SITE_TEMPLATE_PATH ?>/assets/css/news.css" />
     <link rel="stylesheet" href="<?php echo SITE_TEMPLATE_PATH ?>/assets/css/article.css" />
-
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/jquery.js" ></script>
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/jquery.mask.js" ></script>
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/basics.js" ></script>
@@ -40,7 +39,7 @@
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/services.js" ></script>
     <script type="text/javascript" src="<?php echo SITE_TEMPLATE_PATH ?>/assets/js/article.js" ></script>
 
-<script src="https://api-maps.yandex.ru/2.1/?apikey=7eac357d-9894-4506-85eb-2c6239d0d0cc&lang=<?if(CSite::InDir('/en/')){?>en_US<?}else{?>ru_RU<?}?>" type="text/javascript"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7eac357d-9894-4506-85eb-2c6239d0d0cc&lang=<?if(CSite::InDir('/en/')){?>en_US<?}else{?>ru_RU<?}?>" type="text/javascript"></script>
 
 </head>
 <?if ($USER->IsAdmin()){?><div id="panel"><?$APPLICATION->ShowPanel();?></div><?}?>
@@ -50,7 +49,7 @@
             <?if(CSite::InDir('/en/')){?>
                 <a href="/en/" class="logo" style="	background: url(<?php echo SITE_TEMPLATE_PATH ?>/assets/img/logo_en.svg) no-repeat center center/contain;"></a>
             <?}else{?>
-                <a href="/info/" class="logo" style="background: url(<?php echo SITE_TEMPLATE_PATH ?>/assets/img/logo.svg) no-repeat center center/contain;"></a>
+                <a href="/" class="logo" style="background: url(<?php echo SITE_TEMPLATE_PATH ?>/assets/img/logo.svg) no-repeat center center/contain;"></a>
             <?}?>
             <?$APPLICATION->IncludeComponent("bitrix:menu","top_info",Array(
                     "ROOT_MENU_TYPE" => "topinfo",
@@ -72,7 +71,7 @@
                     "TEMPLATE"  => "section_include_template.php"
                 ));?>
             <?}else{?>
-                <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
+                <?$APPLICATION->IncludeFile("/include/header_phone.php", Array(), Array(
                     "MODE"      => "php",
                     "NAME"      => "Редактирование включаемой области раздела",
                     "TEMPLATE"  => "section_include_template.php"
@@ -80,7 +79,7 @@
             <?}?>
             <div class="lang">
                 <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){?>current noLink<?}?>" href="/en/">Eng</a>
-                <a class="yellow-underlined-href <?if(CSite::InDir('/info/')){?>current noLink<?}?>" href="/info/">Rus</a>
+                <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){}else{?>current noLink<?}?>" href="/">Rus</a>
             </div>
             <div class="nav-button"><div></div><div></div><div></div></div>
         </div>
@@ -113,7 +112,7 @@
                     "TEMPLATE"  => "section_include_template.php"
                 ));?>
             <?}else{?>
-                <?$APPLICATION->IncludeFile("/info/include/header_phone.php", Array(), Array(
+                <?$APPLICATION->IncludeFile("/include/header_phone.php", Array(), Array(
                     "MODE"      => "php",
                     "NAME"      => "Редактирование включаемой области раздела",
                     "TEMPLATE"  => "section_include_template.php"
@@ -121,7 +120,7 @@
             <?}?>
             <div class="lang">
                 <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){?>current noLink<?}?>" href="/en/">Eng</a>
-                <a class="yellow-underlined-href <?if(CSite::InDir('/info/')){?>current noLink<?}?>" href="/info/">Rus</a>
+                <a class="yellow-underlined-href <?if(CSite::InDir('/en/')){}else{?>current noLink<?}?>" href="/">Rus</a>
             </div>
             <div class="socials">
                 <? if(CSite::InDir('/en/')){?>
@@ -131,17 +130,30 @@
                         "TEMPLATE"  => "section_include_template.php"
                     ));?>
                 <?}else{?>
-                    <?$APPLICATION->IncludeFile("/info/include/social.php", Array(), Array(
+                    <?$APPLICATION->IncludeFile("/include/social.php", Array(), Array(
                         "MODE"      => "php",
                         "NAME"      => "Редактирование включаемой области раздела",
                         "TEMPLATE"  => "section_include_template.php"
                     ));?>
                 <?}?>
             </div>
-
         </div>
     </div>
-    <? if(CSite::InDir('/info/projects/') || $APPLICATION->GetCurPage(false) == '/info/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
-    }else{?>
-        <div class="page-content-wrapper">
+    <? if(CSite::InDir('/en/')){?>
+        <?$APPLICATION->IncludeFile("/en/include/alarm.php", Array(), Array(
+            "MODE"      => "php",
+            "NAME"      => "Редактирование включаемой области раздела",
+            "TEMPLATE"  => "section_include_template.php"
+        ));?>
+    <?}else{?>
+        <?$APPLICATION->IncludeFile("/include/alarm.php", Array(), Array(
+            "MODE"      => "php",
+            "NAME"      => "Редактирование включаемой области раздела",
+            "TEMPLATE"  => "section_include_template.php"
+        ));?>
     <?}?>
+
+    <? if(CSite::InDir('/projects/') || $APPLICATION->GetCurPage(false) == '/about/' || CSite::InDir('/en/projects/') || $APPLICATION->GetCurPage(false) == '/en/about/'){
+    }else{?>
+    <div class="page-content-wrapper">
+        <?}?>
