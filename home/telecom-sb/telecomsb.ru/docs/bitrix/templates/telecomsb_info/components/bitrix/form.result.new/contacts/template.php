@@ -31,6 +31,17 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
                     <?
                 }
             } //endwhile
+            ?> <?
+            if($arResult["isUseCaptcha"] == "Y")
+            {
+                ?>
+                <br>
+                <b><?=GetMessage("FORM_CAPTCHA_TABLE_TITLE")?></b>
+                <input type="hidden" name="captcha_sid" value="<?=htmlspecialcharsbx($arResult["CAPTCHACode"]);?>" /><img src="/bitrix/tools/captcha.php?captcha_sid=<?=htmlspecialcharsbx($arResult["CAPTCHACode"]);?>" width="180" height="40" />
+                <?=GetMessage("FORM_CAPTCHA_FIELD_TITLE")?><?=$arResult["REQUIRED_SIGN"];?></td>
+                <input type="text" name="captcha_word" size="30" maxlength="50" value="" class="inputtext captcha_word" />
+                <?
+            } // isUseCaptcha
             ?>
             <?if ($arResult["isFormErrors"] == "Y"):?><div class="error"><?=$arResult["FORM_ERRORS_TEXT"];?></div><?endif;?>
             <input <?=(intval($arResult["F_RIGHT"]) < 10 ? "disabled=\"disabled\"" : "");?> type="submit" name="web_form_submit" value="<?=htmlspecialcharsbx(strlen(trim($arResult["arForm"]["BUTTON"])) <= 0 ? GetMessage("FORM_ADD") : $arResult["arForm"]["BUTTON"]);?>" />
@@ -41,7 +52,8 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
             $('[name=web_form_submit]').click(function(){
                 var  $name = $('[name=form_text_1]').val();
                 var  $tel = $('[name=form_text_2]').val();
-              if ($name !== null && $name !== "" && $tel !== null && $tel !== ""){
+                var  $captcha_word = $('[name=captcha_word]').val();
+              if ($name !== null && $name !== "" && $tel !== null && $tel !== "" && $captcha_word !== null && $captcha_word !== ""){
                   $('.contacts-page .form-section').addClass('sent')
                 }
             });

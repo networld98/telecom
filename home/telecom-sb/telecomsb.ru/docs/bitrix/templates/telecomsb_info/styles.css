@@ -74,4 +74,10 @@ min-width: 50%;
 .up_scroll{
  display:none!important;
 }
-
+.captcha_word {
+   border-bottom: 2px solid rgb(196,196,196);
+   height: 36px;
+}
+.captcha_word:hover {
+ border-color: rgb(172,172,172);
+}

@@ -1654,5 +1654,13 @@
 				content: 'Посмотреть';
 			}
 
+			html[lang=en] .about-page .licenses-section .list .view:before{
+				content: 'View';
+			}
+
+			html[lang=en] .about-page .licenses-section .list .view:after{
+				min-width: initial;
+			}
+
 
 

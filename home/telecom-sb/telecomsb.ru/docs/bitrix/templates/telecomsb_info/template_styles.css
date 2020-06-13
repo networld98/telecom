@@ -1,0 +1,15 @@
+.alarm {
+    width: 100%;
+    padding: 10px 20px;
+    line-height: 27px;
+    display: block;
+    background: #EC6930;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
