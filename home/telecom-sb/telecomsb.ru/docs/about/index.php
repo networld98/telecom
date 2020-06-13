@@ -9,7 +9,6 @@ $res = CIBlockElement::GetList(Array("NAME"=>"ASC"), $arFilter,false,false, $arS
 while($ob = $res->GetNextElement()){
     $arFields = $ob->GetFields();
 }?>
-
 <div class="page-content-wrapper">
     <div class="page-content about-page">
         <div class="top-bg-section padded">
